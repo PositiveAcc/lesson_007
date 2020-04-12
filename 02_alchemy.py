@@ -19,8 +19,39 @@
 #   print(Water(), '+', Air(), '=', Water() + Air())
 #   print(Fire(), '+', Air(), '=', Fire() + Air())
 
-# TODO здесь ваш код
 
-# Усложненное задание (делать по желанию)
+class Storm:
+    def __init__(self):
+        print('Образовался шторм')
+
+    def __str__(self):
+        return 'Штром'
+
+
+class Air:
+    def __init__(self):
+        print('Появился воздух')
+
+    def __str__(self):
+        return 'Воздух'
+
+
+class Water:
+    def __init__(self):
+        print('Вода появилась')
+
+    def __str__(self):
+        return 'Вода'
+
+    def __add__(self, other):
+        if isinstance(other, Air):
+            return Storm()
+
+
+print(Water(), '+', Air(), '=', Water() + Air())
+
+
+
+        # Усложненное задание (делать по желанию)
 # Добавить еще элемент в игру.
 # Придумать что будет при сложении существующих элементов с новым.
